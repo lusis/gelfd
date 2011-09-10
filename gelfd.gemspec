@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
+  s.add_development_dependency "json", "~> 1.5.4"
   s.add_development_dependency "rake", "~> 0.9.2"
   # s.add_runtime_dependency "rest-client"
 end
