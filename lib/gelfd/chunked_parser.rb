@@ -22,6 +22,7 @@ module Gelfd
         # This has a chance for an DoS
         # you can send a chunked message as a chunked message
         t = Parser.parse(buff.clone)
+        @@chunk_map.delete(msg_id)
         t
       rescue Exception => e
         "Exception: #{e.message}"
@@ -42,5 +43,6 @@ module Gelfd
         msg_id
       end
     end
+
   end
 end
