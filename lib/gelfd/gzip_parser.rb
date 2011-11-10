@@ -1,8 +1,15 @@
+require 'zlib'
 module Gelfd
   class GzipParser
 
     def self.parse(data)
-      raise NotYetImplementedError, "GZip decoding is not yet implemented"
+      begin
+        t = Zlib::GzipReader.new(StringIO.new(data))
+        t
+      #raise NotYetImplementedError, "GZip decoding is not yet implemented"
+      rescue Exception => e
+        raise DecodeError, "Failed to decode data: #{e}"
+      end
     end
 
   end
