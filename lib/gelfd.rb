@@ -4,6 +4,7 @@ module Gelfd
   CHUNKED_MAGIC = [0x1e,0x0f].pack('C*').freeze
   ZLIB_MAGIC = [0x78,0x9c].pack('C*').freeze
   GZIP_MAGIC = [0x1f,0x8b].pack('C*').freeze
+  UNCOMPRESSED_MAGIC = [0x1f,0x3c].pack('C*').freeze
   HEADER_LENGTH = 12
   DATA_LENGTH = 8192 - HEADER_LENGTH
   MAX_CHUNKS = 128
