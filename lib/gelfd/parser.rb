@@ -10,10 +10,9 @@ module Gelfd
         ChunkedParser.parse(data)
       when GZIP_MAGIC
         GzipParser.parse(data)
-      when UNCOMPRESSED_MAGIC
-        data[2..-1]
       else
-        raise UnknownHeaderError, "Could not find parser for header: #{header.unpack('C*').to_s}"
+        # by default assume the payload to be "raw, uncompressed" GELF, parsing will fail if it's malformed.
+        data
       end
     end
 

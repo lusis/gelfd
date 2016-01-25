@@ -1,1 +1,1 @@
-<{"this":"is","my":"boomstick"}
+{"this":"is","my":"boomstick"}
