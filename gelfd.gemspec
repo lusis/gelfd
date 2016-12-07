@@ -13,9 +13,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "gelfd"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = Dir["lib/**/*","test/**/*","bin/*", "*.gemspec", "*.md",'Gemfile','LICENSE','Rakefile']
+  s.test_files    = Dir["test/**/*"]
+  s.executables   = ["gelfd"]
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
